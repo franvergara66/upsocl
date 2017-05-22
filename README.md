@@ -23,7 +23,7 @@ bundle install
   - Luego Ejecutar:
  ```sh
 rake db:create
-rake db:create
+rake db:migrate
 ``` 
   - Luego Ejecutar para poner en marcha el servidor:
   ```sh
