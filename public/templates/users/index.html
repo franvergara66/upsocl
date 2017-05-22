@@ -5,22 +5,28 @@
         <h3 class="block">Listado de Usuarios {{user.length}} </h3>
         <table class="table table-striped">
             <tr>
+                <th>RUT</th>
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Email</th>
                 <th>Telefono</th>
+                <th>Facebook</th>
+                <th>Twitter</th>
                 <th></th>
             </tr>
             <tr ng-hide="users.length" >
                 <td colspan="5">No hay usuarios creados, Por favor cree uno.</td>
             </tr>
             <tr ng-show="users.length" ng-repeat="user in users">
+                <td>{{user.rut}}</td>
                 <td>{{user.first_name}}</td>
                 <td>{{user.last_name}}</td>
                 <td>{{user.email}}</td>
                 <td>{{user.phone}}</td>
+                <td>{{user.facebook}}</td>
+                <td>{{user.twitter}}</td>
                 <td>
-                    <a href="/users/{{user.id}}/edit">Editar</a> | 
+                    <a href="/users/{{user.id}}/update">Editar</a> | 
                     <a href="" ng-click="deleteUser(user.id)">Eliminar</a> | 
                     <a href="/users/{{user.id}}/detail">Ver</a>
                 </td>

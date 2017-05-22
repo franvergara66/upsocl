@@ -12,7 +12,7 @@ myApp.factory('User', ['$resource', function($resource){
   return $resource('/users/:id.json', {}, {
     show: { method: 'GET' },
     update: { method: 'PUT', params: {id: '@id'} },
-    delete: { method: 'DELETE', params: {id: '@id'} }
+    delete: { method: 'DELETE', params: {id: '@id'} },
   });
 }]);
 
@@ -91,22 +91,22 @@ myApp.controller("UserAddCtr", ['$scope', '$resource', 'Users', '$location', fun
       templateUrl: '/templates/users/index.html',
       controller: 'UserListCtr'
     });
-    $locationProvider.hashPrefix('');
+    
     $routeProvider.when('/users/new', {
       templateUrl: '/templates/users/new.html',
       controller: 'UserAddCtr'
     });
-    $locationProvider.hashPrefix('');
+    
     $routeProvider.when('/users/:id/edit', {
       templateUrl: '/templates/users/edit.html',
       controller: "UserUpdateCtr"
     });
-    $locationProvider.hashPrefix('');
-    $routeProvider.when('/users/:id/edit', {
+    
+    $routeProvider.when('/users/:id/detail', {
       templateUrl: '/templates/users/detail.html',
       controller: "UserDetailCtr"
     });
-    $locationProvider.hashPrefix('');
+    
     $routeProvider.otherwise({
       redirectTo: '/users'
     });
