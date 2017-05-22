@@ -1,0 +1,35 @@
+current directory: /home/fran/Documents/Github/upsocl_demo/vendor/cache/ruby/2.4.0/gems/json-1.8.1/ext/json/ext/generator
+/home/fran/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20170520-7471-zms91.rb extconf.rb
+creating Makefile
+
+current directory: /home/fran/Documents/Github/upsocl_demo/vendor/cache/ruby/2.4.0/gems/json-1.8.1/ext/json/ext/generator
+make "DESTDIR=" clean
+
+current directory: /home/fran/Documents/Github/upsocl_demo/vendor/cache/ruby/2.4.0/gems/json-1.8.1/ext/json/ext/generator
+make "DESTDIR="
+compiling generator.c
+In file included from generator.c:1:0:
+../fbuffer/fbuffer.h: In function ‘fbuffer_to_s’:
+../fbuffer/fbuffer.h:175:47: error: macro "rb_str_new" requires 2 arguments, but only 1 given
+     VALUE result = rb_str_new(FBUFFER_PAIR(fb));
+                                               ^
+../fbuffer/fbuffer.h:175:20: warning: initialization makes integer from pointer without a cast [-Wint-conversion]
+     VALUE result = rb_str_new(FBUFFER_PAIR(fb));
+                    ^
+generator.c: In function ‘generate_json’:
+generator.c:840:25: error: ‘rb_cFixnum’ undeclared (first use in this function)
+     } else if (klass == rb_cFixnum) {
+                         ^
+generator.c:840:25: note: each undeclared identifier is reported only once for each function it appears in
+generator.c:842:25: error: ‘rb_cBignum’ undeclared (first use in this function)
+     } else if (klass == rb_cBignum) {
+                         ^
+generator.c: At top level:
+cc1: warning: unrecognized command line option ‘-Wno-self-assign’
+cc1: warning: unrecognized command line option ‘-Wno-constant-logical-operand’
+cc1: warning: unrecognized command line option ‘-Wno-parentheses-equality’
+cc1: warning: unrecognized command line option ‘-Wno-tautological-compare’
+Makefile:241: recipe for target 'generator.o' failed
+make: *** [generator.o] Error 1
+
+make failed, exit code 2

@@ -1,0 +1,112 @@
+<div id="image-head" class="jumbotron header">
+      
+      <div class="container text-center">
+            <h3 class="block">Añadir Nuevo Usuario</h3>
+      </div>
+    </div>
+<div class="form-group" ng-class="{'has-error' : submitted && userForm.first_name.$invalid}">
+    <label class="control-label col-md-3">RUT<span class="required">* </span> </label>
+    <div class="col-md-4">
+        <input type="text" name="rut" class="form-control" ng-model="user.rut" required placeholder="25615383-1"/>
+    </div>
+    <p ng-show=" submitted && userForm.first_name.$invalid" class="help-block">El RUT no puede quedar vacío.</p>
+</div>
+
+
+<div class="form-group" ng-class="{'has-error' : submitted && userForm.first_name.$invalid}">
+    <label class="control-label col-md-3">Nombre <span class="required">* </span> </label>
+    <div class="col-md-4">
+        <input type="text" name="first_name" class="form-control" ng-model="user.first_name" required placeholder="Nombre"/>
+    </div>
+    <p ng-show=" submitted && userForm.first_name.$invalid" class="help-block">El nombre no puede quedar vacío.</p>
+</div>
+
+<div class="form-group" ng-class="{'has-error' : submitted && userForm.last_name.$invalid}">
+    <label class="control-label col-md-3">Apellido <span class="required">* </span> </label>
+    <div class="col-md-4">
+        <input type="text" name="last_name" class="form-control" ng-model="user.last_name" required placeholder="Apellido"/>
+    </div>
+    <p ng-show=" submitted && userForm.last_name.$invalid" class="help-block">El nombre no puede quedar vacío.</p>
+</div>
+
+<div class="form-group" ng-class="{'has-error' : submitted && userForm.email.$invalid}">
+    <label class="control-label col-md-3">Email <span class="required">* </span> </label>
+    <div class="col-md-4">
+        <input type="email" name="email" class="form-control" ng-model="user.email" required placeholder="test@example.com"/>
+    </div>
+    <p ng-show="submitted && userForm.email.$error.required" class="help-block">El email no puede quedar vacío..</p>
+    <p ng-show="submitted && userForm.email.$error.email" class="help-block">Ingrese un email válido</p>
+</div>
+
+<div class="form-group" ng-class="{'has-error' : submitted && userForm.phone.$invalid}">
+    <label class="control-label col-md-3">Teléfono <span class="required">* </span> </label>
+    <div class="col-md-4">
+        <input type="phone" name="phone" class="form-control" ng-model="user.phone" required placeholder="+56987654321"/>
+    </div>
+    <p ng-show="submitted && userForm.email.$error.required" class="help-block">Coloque un número de teléfono</p>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-md-3">Facebook</label>
+    <div class="col-md-4">
+        <input type="text" name="facebook" class="form-control" ng-model="user.facebook" placeholder="https://www.facebook.com/johndoe"/>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="control-label col-md-3">Twiiter</label>
+    <div class="col-md-4">
+        <input type="text" name="twitter" class="form-control" ng-model="user.twitter" required placeholder="https://twitter.com/johndoe"/>
+    </div>
+</div>
+<!-- <div class="form-group">
+    <label class="control-label col-md-3">Foto de Perfil</label>
+    <div class="col-md-4">
+        <input type=file name="profile_pic" class="form-control" ng-model="user.image" accept="image/*">
+    </div>
+</div> -->
+
+
+<div ng-repeat="address in user.addresses">
+    <div ng-hide="address._destroy">
+        <div class="form-group">
+            <label class="control-label col-md-2">Calle</label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" ng-model="address.street1" placeholder="P Sherman"/>
+            </div>
+            <label class="control-label col-md-2">Nro</label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" ng-model="address.street2" placeholder="42"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Ciudad </label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" ng-model="address.city" placeholder="Santiago"/>
+            </div>
+            <label class="control-label col-md-2">Región</label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" ng-model="address.state" placeholder="Metropolitana"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">País</label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" ng-model="address.country" placeholder="Chile"/>
+            </div>
+            <label class="control-label col-md-2">Código Postal </label>
+            <div class="col-md-3">
+                <input type="text" class="form-control" ng-model="address.zipcode" placeholder="12345"/>
+            </div>
+        </div>
+        <hr/>
+    </div>
+</div>
+
+<div class="form-group ">
+    <div class="pull-left">
+        <a class="btn btn-default" href="/"> Volver</a>
+        <button type="submit" class="btn btn-primary" ng-click="submitted=true">Guardar</button>
+    </div>
+</div>
+

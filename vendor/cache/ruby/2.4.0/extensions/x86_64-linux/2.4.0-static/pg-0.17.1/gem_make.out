@@ -1,0 +1,42 @@
+current directory: /home/fran/Documents/Github/upsocl_demo/vendor/cache/ruby/2.4.0/gems/pg-0.17.1/ext
+/home/fran/.rbenv/versions/2.4.0/bin/ruby -r ./siteconf20170520-7471-1arg32k.rb extconf.rb
+checking for pg_config... no
+No pg_config... trying anyway. If building fails, please try again with
+ --with-pg-config=/path/to/pg_config
+checking for libpq-fe.h... no
+Can't find the 'libpq-fe.h header
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/home/fran/.rbenv/versions/2.4.0/bin/$(RUBY_BASE_NAME)
+	--with-pg
+	--without-pg
+	--with-pg-config
+	--without-pg-config
+	--with-pg_config
+	--without-pg_config
+	--with-pg-dir
+	--without-pg-dir
+	--with-pg-include
+	--without-pg-include=${pg-dir}/include
+	--with-pg-lib
+	--without-pg-lib=${pg-dir}/lib
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /home/fran/Documents/Github/upsocl_demo/vendor/cache/ruby/2.4.0/extensions/x86_64-linux/2.4.0-static/pg-0.17.1/mkmf.log
+
+extconf failed, exit code 1
